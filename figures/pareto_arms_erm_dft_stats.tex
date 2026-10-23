@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Regression arms: single-property vs.\ multi-property ERM. Pareto-front recovery over the 250-structure test set under objective directions (min, min, min) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}18$. Per-seed counts are given because one recovered structure is 5.6\% of recall at this front size, so gaps of one or two structures are within seed noise.}
+\label{tab:pareto_arms_erm}
+\centering
+\footnotesize
+\begin{tabular}{@{}llccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Prec. (\%)} & \textbf{Enrich.} \\
+\hline
+\multirow{4}{*}{ERM-single}
+  & seed0 & 39 & 15 & 83.3 & 38.5 & 5.3 \\
+  & seed1 & 31 & 16 & 88.9 & 51.6 & 7.2 \\
+  & seed2 & 29 & 16 & 88.9 & 55.2 & 7.7 \\
+  & mean & $33.0 \pm 4.3$ & $15.7 \pm 0.5$ & $87.0 \pm 2.6$ & $48.4 \pm 7.2$ & $6.7 \pm 1.0$ \\
+\hline
+\multirow{4}{*}{ERM-multi}
+  & seed0 & 30 & 16 & 88.9 & 53.3 & 7.4 \\
+  & seed1 & 41 & 16 & 88.9 & 39.0 & 5.4 \\
+  & seed2 & 31 & 16 & 88.9 & 51.6 & 7.2 \\
+  & mean & $34.0 \pm 5.0$ & $16.0 \pm 0.0$ & $88.9 \pm 0.0$ & $48.0 \pm 6.4$ & $6.7 \pm 0.9$ \\
+\hline\hline
+\end{tabular}
+\end{table}

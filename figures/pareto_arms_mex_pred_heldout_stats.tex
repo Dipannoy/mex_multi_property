@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Energy-head arms: single-property vs.\ multi-property MEX. Pareto-front recovery over the 4{,}803-structure evaluation library under objective directions (min, min, min) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}43$. Per-seed counts are given because one recovered structure is 2.3\% of recall at this front size, so gaps of one or two structures are within seed noise. Recall also has a ceiling; IGD$^+$ and the hypervolume ratio do not. Both are computed on the structures each arm places on its front, scored at their \emph{measured} property vectors, with objectives min--max scaled over the library so all three contribute comparably. IGD$^+$ is the mean distance from each true-front point to the nearest selected structure, counting only the component by which the selection is worse; HV ratio is the dominated hypervolume of the selection over that of the true front.}
+\label{tab:pareto_arms_mex_heldout}
+\centering
+\footnotesize
+\begin{tabular}{@{}llcccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Enrich.} & \textbf{IGD$^+\downarrow$} & \textbf{HV ratio$\uparrow$} \\
+\hline
+\multirow{4}{*}{MEX-single}
+  & seed0 & 65 & 1 & 2.3 & 1.7 & 0.1117 & 0.7462 \\
+  & seed1 & 21 & 0 & 0.0 & 0.0 & 0.1632 & 0.6583 \\
+  & seed2 & 27 & 2 & 4.7 & 8.3 & 0.0892 & 0.7944 \\
+  & mean & $37.7 \pm 19.5$ & $1.0 \pm 0.8$ & $2.3 \pm 1.9$ & $3.3 \pm 3.6$ & $0.1213 \pm 0.0310$ & $0.7329 \pm 0.0564$ \\
+\hline
+\multirow{4}{*}{MEX-multi}
+  & seed0 & 74 & 25 & 58.1 & 37.7 & 0.0073 & 0.9942 \\
+  & seed1 & 79 & 26 & 60.5 & 36.8 & 0.0130 & 0.9589 \\
+  & seed2 & 94 & 26 & 60.5 & 30.9 & 0.0053 & 0.9945 \\
+  & mean & $82.3 \pm 8.5$ & $25.7 \pm 0.5$ & $59.7 \pm 1.1$ & $35.1 \pm 3.0$ & $0.0085 \pm 0.0033$ & $0.9826 \pm 0.0167$ \\
+\hline\hline
+\end{tabular}
+\end{table}

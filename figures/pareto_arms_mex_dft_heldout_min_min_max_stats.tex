@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Energy-head arms: single-property vs.\ multi-property MEX. Pareto-front recovery over the 4{,}803-structure evaluation library under objective directions (min, min, max) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}14$. Per-seed counts are given because one recovered structure is 7.1\% of recall at this front size, so gaps of one or two structures are within seed noise. Recall also has a ceiling; IGD$^+$ and the hypervolume ratio do not. Both are computed on the structures each arm places on its front, scored at their \emph{measured} property vectors, with objectives min--max scaled over the library so all three contribute comparably. IGD$^+$ is the mean distance from each true-front point to the nearest selected structure, counting only the component by which the selection is worse; HV ratio is the dominated hypervolume of the selection over that of the true front.}
+\label{tab:pareto_arms_mex_heldout_min_min_max}
+\centering
+\footnotesize
+\begin{tabular}{@{}llcccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Enrich.} & \textbf{IGD$^+\downarrow$} & \textbf{HV ratio$\uparrow$} \\
+\hline
+\multirow{4}{*}{MEX-Single}
+  & seed0 & 80 & 1 & 7.1 & 4.3 & 0.1399 & 0.5524 \\
+  & seed1 & 71 & 4 & 28.6 & 19.3 & 0.1349 & 0.5593 \\
+  & seed2 & 112 & 2 & 14.3 & 6.1 & 0.1507 & 0.5470 \\
+  & mean & $87.7 \pm 17.6$ & $2.3 \pm 1.2$ & $16.7 \pm 8.9$ & $9.9 \pm 6.7$ & $0.1418 \pm 0.0066$ & $0.5529 \pm 0.0050$ \\
+\hline
+\multirow{4}{*}{MEX-Multi}
+  & seed0 & 56 & 6 & 42.9 & 36.8 & 0.0575 & 0.7863 \\
+  & seed1 & 55 & 5 & 35.7 & 31.2 & 0.0416 & 0.8547 \\
+  & seed2 & 65 & 4 & 28.6 & 21.1 & 0.0948 & 0.6272 \\
+  & mean & $58.7 \pm 4.5$ & $5.0 \pm 0.8$ & $35.7 \pm 5.8$ & $29.7 \pm 6.5$ & $0.0646 \pm 0.0223$ & $0.7561 \pm 0.0953$ \\
+\hline\hline
+\end{tabular}
+\end{table}

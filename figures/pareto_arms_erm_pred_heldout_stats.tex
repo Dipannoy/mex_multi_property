@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Regression arms: single-property vs.\ multi-property ERM. Pareto-front recovery over the 4{,}803-structure evaluation library under objective directions (min, min, min) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}43$. Per-seed counts are given because one recovered structure is 2.3\% of recall at this front size, so gaps of one or two structures are within seed noise. Recall also has a ceiling; IGD$^+$ and the hypervolume ratio do not. Both are computed on the structures each arm places on its front, scored at their \emph{measured} property vectors, with objectives min--max scaled over the library so all three contribute comparably. IGD$^+$ is the mean distance from each true-front point to the nearest selected structure, counting only the component by which the selection is worse; HV ratio is the dominated hypervolume of the selection over that of the true front.}
+\label{tab:pareto_arms_erm_heldout}
+\centering
+\footnotesize
+\begin{tabular}{@{}llcccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Enrich.} & \textbf{IGD$^+\downarrow$} & \textbf{HV ratio$\uparrow$} \\
+\hline
+\multirow{4}{*}{ERM-single}
+  & seed0 & 119 & 23 & 53.5 & 21.6 & 0.0098 & 0.9711 \\
+  & seed1 & 77 & 23 & 53.5 & 33.4 & 0.0080 & 0.9917 \\
+  & seed2 & 47 & 18 & 41.9 & 42.8 & 0.0151 & 0.9628 \\
+  & mean & $81.0 \pm 29.5$ & $21.3 \pm 2.4$ & $49.6 \pm 5.5$ & $32.6 \pm 8.7$ & $0.0110 \pm 0.0030$ & $0.9752 \pm 0.0121$ \\
+\hline
+\multirow{4}{*}{ERM-multi}
+  & seed0 & 91 & 27 & 62.8 & 33.1 & 0.0051 & 0.9950 \\
+  & seed1 & 95 & 26 & 60.5 & 30.6 & 0.0053 & 0.9950 \\
+  & seed2 & 83 & 27 & 62.8 & 36.3 & 0.0041 & 0.9964 \\
+  & mean & $89.7 \pm 5.0$ & $26.7 \pm 0.5$ & $62.0 \pm 1.1$ & $33.3 \pm 2.4$ & $0.0049 \pm 0.0006$ & $0.9954 \pm 0.0006$ \\
+\hline\hline
+\end{tabular}
+\end{table}

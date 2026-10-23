@@ -1,0 +1,38 @@
+includes:
+- configs/mex-0.25/equiformer_v2/base_ebm.yml
+- configs/mex-0.25/params/base_param.yml
+
+# loss_functions:
+#   - y:
+#       fn: info-nce
+#       coefficient: 1
+
+dataset:
+  train:
+    format: lmdb
+    src: data/mp20_1k_eform/train
+    weighted_sample: false
+    train_max_y: 0.0798248545000007
+    train_min_y: -3.988628588
+    # lower_bound: -6
+    # upper_bound: 2
+    # infer_type: energy
+    transforms:
+      normalizer:
+        y:
+          mean: -0.8837218834130784
+          stdev: 0.8624934288287959
+
+  val:
+    src: data/mp20_1k_eform/val
+
+  test:
+    src: data/mp20_1k_eform/test
+
+optim:
+  patience: 10
+
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

@@ -1,0 +1,33 @@
+includes:
+- configs/mex-multi/equiformer_v2/base_ebm_multi.yml
+- configs/mex-multi/params/base_param_multi.yml
+
+dataset:
+  property_names: [dielectric, gvrh, phonons]
+  train_max_y_dielectric: 3.49569422813761
+  train_min_y_dielectric: 0.2940224824365713
+  train_max_y_gvrh: 2.716003343634799
+  train_min_y_gvrh: 0.4771212547196624
+  train_max_y_phonons: 8.166666593156581
+  train_min_y_phonons: 4.087416859737459
+  train:
+    format: lmdb
+    src: data/mp_multi_property/train
+    weighted_sample: false
+    transforms:
+      normalizer:
+        y_dielectric:
+          mean: 0.9145084103718453
+          stdev: 0.36230577706929
+        y_gvrh:
+          mean: 1.4167857141317513
+          stdev: 0.39981620244910276
+        y_phonons:
+          mean: 6.044353241196001
+          stdev: 0.6743207547762478
+  val:
+    src: data/mp_multi_property/val
+  test:
+    src: data/mp_multi_property/test
+
+logger: tensorboard

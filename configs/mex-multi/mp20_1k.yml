@@ -1,0 +1,38 @@
+includes:
+- configs/mex-multi/equiformer_v2/base_ebm_mp20_three_property.yml
+- configs/mex-multi/params/base_param_multi.yml
+
+dataset:
+  property_names: [eform, bandgap, gvrh]
+  train_max_y_eform:   0.0798248545000007
+  train_min_y_eform:   -3.988628588
+  train_max_y_bandgap: 8.0695
+  train_min_y_bandgap: 0.0
+  train_max_y_gvrh:    5.7602291
+  train_min_y_gvrh:    0.01786772
+
+  train:
+    format: lmdb
+    src: data/mp20_1k/train
+    weighted_sample: false
+    transforms:
+      normalizer:
+        y_eform:
+          mean:  -0.8837218834130784
+          stdev: 0.8624934288287959
+        y_bandgap:
+          mean:  0.6322575555555555
+          stdev: 1.3673586044953088
+        y_gvrh:
+          mean:  1.8813051378999999
+          stdev: 0.4600772891020718
+
+  val:
+    src: data/mp20_1k/val
+  test:
+    src: data/mp20_1k/test
+
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

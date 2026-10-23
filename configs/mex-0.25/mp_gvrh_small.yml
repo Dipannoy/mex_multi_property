@@ -1,0 +1,23 @@
+includes:
+- configs/mex-0.25/equiformer_v2/base_ebm.yml
+- configs/mex-0.25/params/base_param.yml
+dataset:
+  train:
+    format: lmdb
+    src: data/mp_gvrh_low/train
+    weighted_sample: false
+    train_max_y: 2.718501688867274
+    train_min_y: 1.3979400086720375
+    transforms:
+      normalizer:
+        y:
+          mean: 1.7434881930988457
+          stdev: 0.2196231027207981
+  val:
+    src: data/mp_gvrh_low/val
+  test:
+    src: data/mp_gvrh_low/test
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

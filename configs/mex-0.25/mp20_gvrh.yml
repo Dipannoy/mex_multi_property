@@ -1,0 +1,49 @@
+includes:
+- configs/mex-0.25/equiformer_v2/base_ebm.yml
+- configs/mex-0.25/params/base_param.yml
+
+# Override loss to info-nce: uses global uniform negatives from [lb,ub] so the
+# energy landscape is globally informative — required for energy-based inference.
+# loss_functions:
+#   - y:
+#       fn: info-nce
+#       coefficient: 1
+#   - y:
+#       fn: euc
+#       coefficient: 0.25
+
+dataset:
+  train:
+    format: lmdb
+    src: data/mp20_gvrh/train
+    weighted_sample: false
+    # Run files/build_single_property_lmdbs.py on the cluster to get exact values.
+    # Values below are from the mp20_three_property training split.
+    # y_gvrh is stored as log10(K_VRH / GPa), matching the existing mp_gvrh convention.
+    train_max_y: 10.57575268
+    train_min_y: -1.00877392
+    # lower_bound: -2    # raw log10(GPa); EBM sampling range (covers training data with margin)
+    # upper_bound: 12    # raw log10(GPa); training max is 10.576, this covers it with margin
+    # Cosine inference: EUC-aligned fc_y representation is more reliable than
+    # the fused energy MLP for continuous stochastic argmax optimization.
+    # infer_type: energy
+    transforms:
+      normalizer:
+        y:
+          mean: 1.8823829524713083
+          stdev: 0.4928381173254456
+
+  val:
+    src: data/mp20_gvrh/val
+
+  test:
+    src: data/mp20_gvrh/test
+
+# Override patience for larger mp20 dataset
+# optim:
+#   patience: 10
+
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

@@ -1,0 +1,48 @@
+includes:
+- configs/mex-0.25/equiformer_v2/base_ebm.yml
+- configs/mex-0.25/params/base_param.yml
+
+# Override loss to info-nce: uses global uniform negatives from [lb,ub] so the
+# energy landscape is globally informative — required for energy-based inference.
+loss_functions:
+  - y:
+      fn: info-nce
+      coefficient: 1
+#   - y:
+#       fn: euc
+#       coefficient: 0.25
+
+dataset:
+  train:
+    format: lmdb
+    src: data/mp20_bandgap/train
+    weighted_sample: false
+    # Run files/build_single_property_lmdbs.py on the cluster to get exact values.
+    # Values below are from the mp20_three_property training split.
+    train_max_y: 17.6526
+    train_min_y: 0.0
+    lower_bound: -1    # raw eV; EBM sampling range (covers training data with margin)
+    upper_bound: 20    # raw eV; training max is 17.65, this covers it with margin
+    # Cosine inference: EUC-aligned fc_y representation is more reliable than
+    # the fused energy MLP for continuous stochastic argmax optimization.
+    infer_type: energy
+    transforms:
+      normalizer:
+        y:
+          mean: 0.6527340346850292
+          stdev: 1.4120499351711144
+
+  val:
+    src: data/mp20_bandgap/val
+
+  test:
+    src: data/mp20_bandgap/test
+
+# Override patience for larger mp20 dataset
+optim:
+  patience: 10
+
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

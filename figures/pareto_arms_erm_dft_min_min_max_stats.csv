@@ -1,0 +1,7 @@
+set,arm,seed,n,front_size,true_front,recovered,recall_pct,precision_pct,enrichment
+erm,ERM-single,seed0,250,21,16,10,62.5,47.61904761904761,7.44047619047619
+erm,ERM-multi,seed0,250,25,16,10,62.5,40.0,6.25
+erm,ERM-single,seed1,250,16,16,2,12.5,12.5,1.953125
+erm,ERM-multi,seed1,250,21,16,9,56.25,42.857142857142854,6.696428571428571
+erm,ERM-single,seed2,250,21,16,10,62.5,47.61904761904761,7.44047619047619
+erm,ERM-multi,seed2,250,22,16,9,56.25,40.909090909090914,6.392045454545455

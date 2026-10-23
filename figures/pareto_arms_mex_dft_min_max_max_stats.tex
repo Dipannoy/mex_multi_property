@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Energy-head arms: single-property vs.\ multi-property MEX. Pareto-front recovery over the 250-structure test set under objective directions (min, max, max) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}6$. Per-seed counts are given because one recovered structure is 16.7\% of recall at this front size, so gaps of one or two structures are within seed noise.}
+\label{tab:pareto_arms_mex}
+\centering
+\footnotesize
+\begin{tabular}{@{}llccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Prec. (\%)} & \textbf{Enrich.} \\
+\hline
+\multirow{4}{*}{MEX-single}
+  & seed0 & 32 & 4 & 66.7 & 12.5 & 5.2 \\
+  & seed1 & 43 & 3 & 50.0 & 7.0 & 2.9 \\
+  & seed2 & 26 & 2 & 33.3 & 7.7 & 3.2 \\
+  & mean & $33.7 \pm 7.0$ & $3.0 \pm 0.8$ & $50.0 \pm 13.6$ & $9.1 \pm 2.5$ & $3.8 \pm 1.0$ \\
+\hline
+\multirow{4}{*}{MEX-multi}
+  & seed0 & 12 & 4 & 66.7 & 33.3 & 13.9 \\
+  & seed1 & 14 & 4 & 66.7 & 28.6 & 11.9 \\
+  & seed2 & 19 & 3 & 50.0 & 15.8 & 6.6 \\
+  & mean & $15.0 \pm 2.9$ & $3.7 \pm 0.5$ & $61.1 \pm 7.9$ & $25.9 \pm 7.4$ & $10.8 \pm 3.1$ \\
+\hline\hline
+\end{tabular}
+\end{table}

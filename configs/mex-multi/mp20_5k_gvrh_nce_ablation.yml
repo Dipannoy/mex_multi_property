@@ -1,0 +1,45 @@
+# InfoNCE-vs-NCE ablation for K_VRH (sec:infonce_ablation).
+# Identical to configs/mex-multi/mp20_5k.yml (same data, same normaliser
+# stats, same everything) except it includes the ablation base config, which
+# trains y_gvrh with local NCE instead of InfoNCE. Train this for the same
+# 3 seeds as the main mp20_5k_multi runs, then compare against
+# tab:main_results / tab:model_comparison's K_VRH row.
+
+includes:
+- configs/mex-multi/equiformer_v2/base_ebm_mp20_three_property_gvrh_nce.yml
+- configs/mex-multi/params/base_param_multi.yml
+
+dataset:
+  property_names: [eform, bandgap, gvrh]
+  train_max_y_eform:   0.0753554868749999
+  train_min_y_eform:   -4.472611329375
+  train_max_y_bandgap: 9.3913
+  train_min_y_bandgap: 0.0
+  train_max_y_gvrh:    10.57575268
+  train_min_y_gvrh:    -0.35359627
+
+  train:
+    format: lmdb
+    src: data/mp20_5k/train
+    weighted_sample: false
+    transforms:
+      normalizer:
+        y_eform:
+          mean:  -0.8952717141530322
+          stdev: 0.9020065402946057
+        y_bandgap:
+          mean:  0.6654605333333333
+          stdev: 1.4155904141029494
+        y_gvrh:
+          mean:  1.8883200141155556
+          stdev: 0.5052320287880178
+
+  val:
+    src: data/mp20_5k/val
+  test:
+    src: data/mp20_5k/test
+
+logger:
+  name: wandb
+  project: mex_inverse_design
+  entity: dipannoydip

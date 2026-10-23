@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{4pt}
+\caption{Regression arms: single-property vs.\ multi-property ERM. Pareto-front recovery over the 4{,}803-structure evaluation library under objective directions (min, min, max) in the order ($E_\mathrm{form}$, $E_g$, $K_\mathrm{VRH}$). The true front is computed from DFT values and is identical for both arms, with $|F^\star|{=}14$. Per-seed counts are given because one recovered structure is 7.1\% of recall at this front size, so gaps of one or two structures are within seed noise. Recall also has a ceiling; IGD$^+$ and the hypervolume ratio do not. Both are computed on the structures each arm places on its front, scored at their \emph{measured} property vectors, with objectives min--max scaled over the library so all three contribute comparably. IGD$^+$ is the mean distance from each true-front point to the nearest selected structure, counting only the component by which the selection is worse; HV ratio is the dominated hypervolume of the selection over that of the true front.}
+\label{tab:pareto_arms_erm_heldout_min_min_max}
+\centering
+\footnotesize
+\begin{tabular}{@{}llcccccc@{}}
+\hline\hline
+\textbf{Arm} & \textbf{Seed} & \textbf{Front} & \textbf{Rec.} & \textbf{Recall (\%)} & \textbf{Enrich.} & \textbf{IGD$^+\downarrow$} & \textbf{HV ratio$\uparrow$} \\
+\hline
+\multirow{4}{*}{ERM-Single}
+  & seed0 & 43 & 6 & 42.9 & 47.9 & 0.0759 & 0.6656 \\
+  & seed1 & 55 & 6 & 42.9 & 37.4 & 0.1149 & 0.5890 \\
+  & seed2 & 39 & 4 & 28.6 & 35.2 & 0.1155 & 0.5888 \\
+  & mean & $45.7 \pm 6.8$ & $5.3 \pm 0.9$ & $38.1 \pm 6.7$ & $40.2 \pm 5.5$ & $0.1021 \pm 0.0185$ & $0.6145 \pm 0.0362$ \\
+\hline
+\multirow{4}{*}{ERM-Multi}
+  & seed0 & 40 & 4 & 28.6 & 34.3 & 0.1140 & 0.5940 \\
+  & seed1 & 39 & 6 & 42.9 & 52.8 & 0.1108 & 0.5897 \\
+  & seed2 & 40 & 7 & 50.0 & 60.0 & 0.1107 & 0.5895 \\
+  & mean & $39.7 \pm 0.5$ & $5.7 \pm 1.2$ & $40.5 \pm 8.9$ & $49.0 \pm 10.8$ & $0.1118 \pm 0.0015$ & $0.5911 \pm 0.0021$ \\
+\hline\hline
+\end{tabular}
+\end{table}

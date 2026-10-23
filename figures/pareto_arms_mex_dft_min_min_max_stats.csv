@@ -1,0 +1,7 @@
+set,arm,seed,n,front_size,true_front,recovered,recall_pct,precision_pct,enrichment
+mex,MEX-single,seed0,250,36,16,6,37.5,16.666666666666664,2.6041666666666665
+mex,MEX-multi,seed0,250,20,16,4,25.0,20.0,3.125
+mex,MEX-single,seed1,250,24,16,4,25.0,16.666666666666664,2.6041666666666665
+mex,MEX-multi,seed1,250,12,16,3,18.75,25.0,3.90625
+mex,MEX-single,seed2,250,46,16,7,43.75,15.217391304347828,2.377717391304348
+mex,MEX-multi,seed2,250,23,16,5,31.25,21.73913043478261,3.3967391304347823
